@@ -28,4 +28,29 @@ class Converter
 
         return $output;
     }
+
+    public function arrayToHex(array $input) : string
+    {
+        $binArray = [];
+
+        foreach ($input as $line) {
+            foreach ($line as $key => $bit) {
+                if (isset($binArray[$key])) {
+                    $binArray[$key] .= $bit;
+                } else {
+                    $binArray[$key] = $bit;
+                }
+            }
+        }
+
+        $output = [];
+        foreach ($binArray as $bin) {
+            $output[] = sprintf(
+                '%02s',
+                base_convert($bin, 2, 16)
+            );
+        }
+
+        return implode('-', $output);
+    }
 }

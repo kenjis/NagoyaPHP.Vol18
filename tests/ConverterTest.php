@@ -53,4 +53,24 @@ class ConverterTest extends TestCase
         ];
         $this->assertSame($expected, $actual);
     }
+
+    public function test_配列を16進数に変換できる() : void
+    {
+        $converter = new Converter();
+
+        $input = [
+            [0, 0, 0],
+            [0, 0, 0],
+            [0, 0, 0],
+            [1, 0, 0],
+            [1, 0, 0],
+            [1, 0, 0],
+            [1, 1, 0],
+            [1, 1, 0],
+        ];
+        $actual = $converter->arrayToHex($input);
+
+        $expected = '1f-03-00';
+        $this->assertSame($expected, $actual);
+    }
 }
