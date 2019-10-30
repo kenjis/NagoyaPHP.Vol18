@@ -18,10 +18,10 @@ class Converter
     {
         $output = [];
 
-        foreach ($input as $line) {
-            $lineArray = str_split($line);
+        foreach ($input as $rowString) {
+            $rowArray = str_split($rowString);
 
-            foreach ($lineArray as $key => $bit) {
+            foreach ($rowArray as $key => $bit) {
                 $output[$key][] = (int) $bit;
             }
         }
@@ -33,8 +33,8 @@ class Converter
     {
         $binArray = [];
 
-        foreach ($input as $line) {
-            foreach ($line as $key => $bit) {
+        foreach ($input as $rowArray) {
+            foreach ($rowArray as $key => $bit) {
                 if (isset($binArray[$key])) {
                     $binArray[$key] .= $bit;
                 } else {
