@@ -23,7 +23,7 @@ class Dokaku18Test extends TestCase
      */
     public function test(string $input, string $expected) : void
     {
-        $this->assertEquals($expected, $this->dokaku18->run($input));
+        $this->assertSame($expected, $this->dokaku18->run($input));
     }
 
     public function dataProvider()
