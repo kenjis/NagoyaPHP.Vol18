@@ -53,4 +53,24 @@ class Converter
 
         return implode('-', $output);
     }
+
+    public function removeRows(array $input) : array
+    {
+        $output = [];
+
+        foreach ($input as $row) {
+            if (in_array(0, $row, true)) {
+                $output[] = $row;
+
+                continue;
+            }
+
+            array_unshift(
+                $output,
+                array_fill(0, count($row), 0)
+            );
+        }
+
+        return $output;
+    }
 }

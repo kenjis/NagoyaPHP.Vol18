@@ -54,6 +54,36 @@ class ConverterTest extends TestCase
         $this->assertSame($expected, $actual);
     }
 
+    public function test_全て1の行を削除して先頭を0の行で埋めることができる() : void
+    {
+        $converter = new Converter();
+
+        $input = [
+            [1, 0, 0],
+            [1, 0, 0],
+            [1, 1, 1],
+            [1, 0, 0],
+            [1, 1, 0],
+            [1, 1, 0],
+            [1, 1, 1],
+            [1, 1, 1],
+        ];
+
+        $actual = $converter->removeRows($input);
+
+        $expected = [
+            [0, 0, 0],
+            [0, 0, 0],
+            [0, 0, 0],
+            [1, 0, 0],
+            [1, 0, 0],
+            [1, 0, 0],
+            [1, 1, 0],
+            [1, 1, 0],
+        ];
+        $this->assertSame($expected, $actual);
+    }
+
     public function test_配列の行と列を置き換えて16進数文字列に変換できる() : void
     {
         $converter = new Converter();
