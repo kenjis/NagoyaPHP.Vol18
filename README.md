@@ -21,3 +21,11 @@ $ composer test
 ```
 
 [Nagoyaphp\Dokaku18\Dokaku18Test::test()](/tests/Dokaku18Test.php#L24) のテストが全てパスすればOK。
+
+## 関連
+
+- https://github.com/ttskch/nagoyaphp18
+- https://gist.github.com/shimokei53/6b6d77463faae210ead0d3f9046b3101
+- https://github.com/inaka-phper/BitTetris
+- https://github.com/77web/nagoyaphp18
+- https://gist.github.com/ounziw/b7dcae505b1cb99d901abdf0afbb670b
