@@ -30,7 +30,7 @@ class ConverterTest extends TestCase
         $this->assertSame($expected, $actual);
     }
 
-    public function test_2進数を配列に変換できる() : void
+    public function test_2進数の配列を行と列を置き換えた配列に変換できる() : void
     {
         $converter = new Converter();
 
@@ -54,7 +54,7 @@ class ConverterTest extends TestCase
         $this->assertSame($expected, $actual);
     }
 
-    public function test_配列を16進数に変換できる() : void
+    public function test_配列の行と列を置き換えて16進数文字列に変換できる() : void
     {
         $converter = new Converter();
 
