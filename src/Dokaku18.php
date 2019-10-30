@@ -8,7 +8,18 @@ class Dokaku18
 {
     public function run(string $input) : string
     {
-        // implement me.
-        return '1f-03-00-1c-0d-0f-06';
+        $converter = new Converter();
+
+        $hexArray = explode('-', $input);
+
+        $binArray = [];
+        foreach ($hexArray as $hex) {
+            $binArray[] = $converter->hexToBin($hex);
+        }
+
+        $transpose = $converter->convertToArray($binArray);
+        $newArray = $converter->removeRows($transpose);
+
+        return $converter->arrayToHex($newArray);
     }
 }
