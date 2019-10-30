@@ -13,4 +13,19 @@ class Converter
             base_convert($hexadecimal, 16, 2)
         );
     }
+
+    public function convertToArray(array $input) : array
+    {
+        $output = [];
+
+        foreach ($input as $line) {
+            $lineArray = str_split($line);
+
+            foreach ($lineArray as $key => $bit) {
+                $output[$key][] = (int) $bit;
+            }
+        }
+
+        return $output;
+    }
 }

@@ -29,4 +29,28 @@ class ConverterTest extends TestCase
 
         $this->assertSame($expected, $actual);
     }
+
+    public function test_2進数を配列に変換できる() : void
+    {
+        $converter = new Converter();
+
+        $input = [
+            '11111111',
+            '00101111',
+            '00100011',
+        ];
+        $actual = $converter->convertToArray($input);
+
+        $expected = [
+            [1, 0, 0],
+            [1, 0, 0],
+            [1, 1, 1],
+            [1, 0, 0],
+            [1, 1, 0],
+            [1, 1, 0],
+            [1, 1, 1],
+            [1, 1, 1],
+        ];
+        $this->assertSame($expected, $actual);
+    }
 }
