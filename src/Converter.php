@@ -31,15 +31,15 @@ class Converter
 
     public function arrayToHex(array $input) : string
     {
+        $count = count($input[0]);
         $binArray = [];
+        for ($i = 0; $i < $count; $i++) {
+            $binArray[$i] = '';
+        }
 
         foreach ($input as $rowArray) {
             foreach ($rowArray as $key => $bit) {
-                if (isset($binArray[$key])) {
-                    $binArray[$key] .= $bit;
-                } else {
-                    $binArray[$key] = $bit;
-                }
+                $binArray[$key] .= $bit;
             }
         }
 
